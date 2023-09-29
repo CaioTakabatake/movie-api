@@ -15,7 +15,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<Movie> getAllMovies() {
         return movieService.getAllMovies();
     }
@@ -26,7 +26,7 @@ public class MovieController {
                 .orElseThrow(() -> new MovieNotFoundException("Movie not found with id: " + id));
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.addMovie(movie);
     }
