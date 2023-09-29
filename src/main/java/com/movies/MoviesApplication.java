@@ -14,8 +14,8 @@ public class MoviesApplication {
     @Bean
     public CommandLineRunner initializeData(MovieRepository movieRepository) {
         return args -> {
-            Movie movie1 = new Movie(1, "Movie 1", "Description of Movie 1", 120);
-            Movie movie2 = new Movie(2, "Movie 2", "Description of Movie 2", 90);
+            Movie movie1 = new Movie("Movie 1", "Description of Movie 1", 120);
+            Movie movie2 = new Movie("Movie 2", "Description of Movie 2", 90);
 
             movieRepository.save(movie1);
             movieRepository.save(movie2);
