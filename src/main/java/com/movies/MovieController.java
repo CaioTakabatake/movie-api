@@ -17,27 +17,27 @@ public class MovieController {
 
     @GetMapping("")
     public List<Movie> getAllMovies() {
-        return movieService.getAllMovies();
+        return this.movieService.getAllMovies();
     }
 
     @GetMapping("/{id}")
     public Movie getMovieById(@PathVariable Integer id) {
-        return movieService.getMovieById(id)
+        return this.movieService.getMovieById(id)
                 .orElseThrow(() -> new MovieNotFoundException("Movie not found with id: " + id));
     }
 
     @PostMapping("")
     public Movie addMovie(@RequestBody Movie movie) {
-        return movieService.addMovie(movie);
+        return this.movieService.addMovie(movie);
     }
 
     @PutMapping("/{id}")
     public Movie updateMovie(@PathVariable Integer id, @RequestBody Movie updatedMovie) {
-        return movieService.updateMovie(id, updatedMovie);
+        return this.movieService.updateMovie(id, updatedMovie);
     }
 
     @DeleteMapping("/{id}")
     public void deleteMovie(@PathVariable Integer id) {
-        movieService.deleteMovie(id);
+        this.movieService.deleteMovie(id);
     }
 }
